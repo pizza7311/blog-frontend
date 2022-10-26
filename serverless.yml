@@ -1,0 +1,5 @@
+blogFrontend:
+  component: "@sls-next/serverless-component@3.7.0"
+  inputs:
+    domain: pizza7311.me
+    bucketRegion: ap-northeast-2
