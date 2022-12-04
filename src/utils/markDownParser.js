@@ -4,10 +4,11 @@ import parser from 'remark-parse'
 import stringify from 'rehype-stringify'
 import gfm from 'remark-gfm'
 import prism from 'rehype-prism'
+import raw from 'rehype-raw'
 
 const parse=(content)=>{
     return new Promise((resolve,reject)=>{
-        unified().use(toHTML).use(parser).use(stringify).use(gfm).use(prism)
+        unified().use(toHTML,{allowDangerousHtml:true}).use(parser).use(stringify).use(gfm).use(prism).use(raw)
         .process(content,(err,res)=>{
             if(err){
                 console.log(err)
