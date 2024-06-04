@@ -57,7 +57,9 @@ const useEditor = ({ _title, _slug, _category, _description, _tags = [] }) => {
           body: editorRef.current.getInstance().getMarkdown(),
           category: category,
           urlSlug: slug,
-          thumbnail: thumbnail ? thumbnail : thumbnailList[0],
+          thumbnail: thumbnail
+            ? thumbnail + "?w=400"
+            : thumbnailList[0] + "?w=400",
           bodyDescription: description,
           tags,
         },
@@ -166,6 +168,7 @@ const useEditor = ({ _title, _slug, _category, _description, _tags = [] }) => {
     categoryList: loading ? [] : categories.categories,
     editorRef,
     thumbnailList,
+    thumbnail,
     setThumbnail,
   };
 };

@@ -54,7 +54,10 @@ const Editor = ({ title, body, slug, category, description, tags, edit }) => {
         </div>
         <div className="flex-1 w-64">
           <div>
-            <button className="text-gray-900 bg-white border border-gray-300  hover:bg-gray-100 font-medium rounded-lg text-lg px-2 py-2 mr-2 hover:cursor-not-allowed">
+            <button
+              onClick={editorTools.toggleThumbnailModal}
+              className="text-gray-900 bg-white border border-gray-300  hover:bg-gray-100 font-medium rounded-lg text-lg px-2 py-2 mr-2"
+            >
               썸네일 지정
             </button>
             {edit ? (
@@ -127,7 +130,14 @@ const Editor = ({ title, body, slug, category, description, tags, edit }) => {
           plugins={[[codeSyntaxHighlight, { highlighter: Prism }]]}
         ></UiEditor>
       </div>
-      {editorTools.modalState && <ThumbnailModal />}
+      {editorTools.modalState && (
+        <ThumbnailModal
+          toggle={editorTools.toggleThumbnailModal}
+          thumbnailList={editorTools.thumbnailList}
+          currentThumbnail={editorTools.thumbnail}
+          setThumbnail={editorTools.setThumbnail}
+        />
+      )}
     </div>
   );
 };
