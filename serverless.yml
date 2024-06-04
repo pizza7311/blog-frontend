@@ -3,3 +3,4 @@ blogFrontend:
   inputs:
     domain: pizza7311.me
     bucketRegion: ap-northeast-2
+    runtime: nodejs20.x
