@@ -1,5 +1,7 @@
 import "prism-themes/themes/prism-vsc-dark-plus.css";
-import "prismjs/components";
+import Prism from "prismjs";
+import "prismjs/components/prism-sql";
+import "prismjs/components/prism-bash";
 
 const Viewer = ({ html }) => {
   return (
