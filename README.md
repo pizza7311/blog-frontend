@@ -1,4 +1,4 @@
-# Stack
+## Stacks
 * Next.js@12.1.6
 * Tailwind CSS
 * Apollo Client
